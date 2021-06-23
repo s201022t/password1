@@ -5,19 +5,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/ncmb.min.js" charset="utf-8"></script>
-</head>
-<body>
-   <h2>パスワード管理画面</h2>
-   <table id="data-table"><tr><th>サイト名</th><th>ID</th><th>パスワード</th><th>表示</th><th>変更</th><th>削除</th></tr></table><br><br>        <!--tableタグパスワード管理本体画面 -->
-   <div id="message"></div><br><br>  <!--message表示エリア -->
-   <div id="m"></div>
-   <table id="hensyuu"></table><br><br>  <!--tableタグ編集画面 -->
-   
-   <table><tr><th>サイト名</th><td><textarea id="saito" rows="1"></textarea></td></tr><tr><th>ID</th><td><textarea id="ad" rows="1"></textarea></td></tr><tr><th>パスワード</th><td><input type="password" id="pasu"></td></tr></table>      <!--パスワード追加table -->
-   
-  <a class=btn-square-pop onClick="pass();">追加</a>  <!--パスワードの追加画面　pass関数 -->
-  <a href="pass-checker.html" class=btn-square-pop>パスワードチェッカー</a>
-   <script>
+    <script>
         
 
         const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情報を取得
@@ -450,5 +438,18 @@
     
     
     </script>
+</head>
+<body>
+   <h2>パスワード管理画面</h2>
+   <table id="data-table"><tr><th>サイト名</th><th>ID</th><th>パスワード</th><th>表示</th><th>変更</th><th>削除</th></tr></table><br><br>        <!--tableタグパスワード管理本体画面 -->
+   <div id="message"></div><br><br>  <!--message表示エリア -->
+   <div id="m"></div>
+   <table id="hensyuu"></table><br><br>  <!--tableタグ編集画面 -->
+   
+   <table><tr><th>サイト名</th><td><textarea id="saito" rows="1"></textarea></td></tr><tr><th>ID</th><td><textarea id="ad" rows="1"></textarea></td></tr><tr><th>パスワード</th><td><input type="password" id="pasu"></td></tr></table>      <!--パスワード追加table -->
+   
+  <a class=btn-square-pop onClick="pass();">追加</a>  <!--パスワードの追加画面　pass関数 -->
+  <a href="pass-checker.html" class=btn-square-pop>パスワードチェッカー</a>
+   
 </body>
 </html>
