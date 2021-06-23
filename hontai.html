@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
     
     <script>
-        var applicationKey="5ccc23553d7fa3b969523525ec47e154eed39ffd502275ab2bed95a3ae185398";
-        var clientKey="31df3f220d2fe12ae4cc76dba2545d28d0e52710a03e0500ca91284c66463a13";
-        var ncmb=new NCMB(applicationKey,clientKey);
+        window.onload = function () {
+        
 
         const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情報を取得
         var w=0;        //変数の宣言(29行目まで)
