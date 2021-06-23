@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <script src="pass-checker.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .bline {
+       
+        padding: 10px;
+      }
+      td {
+        border-bottom: 1px solid #ccc;
+      }
+      .ok { color: green; }
+      .ng { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>パスワードチェッカー</h1>
+  <div class="bline">
+    <p><h3>パスワード:</h3>
+    <input class="un" type="password" id="pw"
+    onkeyup="checkPassword()" /></p>
+    
+  </div>
+  <h2>結果</h2>
+  <div>
+    <table class="bline">
+      <tr>
+        <th>項目</th>
+        <th>値</th>
+        <th>評価</th>
+      </tr>
+      <tr>
+        <td>長さ</td>
+        <td id="len_v"></td>
+        <td id="len_h"></td>
+      </tr>
+      <tr>
+        <td>文字種類</td>
+        <td id="type_v"></td>
+        <td id="type_h"></td>
+      </tr>
+      <tr>
+        <td>文字の連続</td>
+        <td id="ren_v"></td>
+        <td id="ren_h"></td>
+      </tr>
+      <tr>
+        <td>文字の隣接</td>
+        <td id="rin_v"></td>
+        <td id="rin_h"></td>
+      </tr>
+      
+    </table>
+  </div>
+  <a href="hontai.html" class=btn-square-pop>戻る</a>
+</body>
+</html>
