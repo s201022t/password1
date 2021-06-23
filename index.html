@@ -2,7 +2,24 @@
 <head>
    
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
+    <script src="script.js">
+       function roguin(){  /*ログイン関数*/
+    
+     var username=document.getElementById("username").value;    /*ユーザーネームを取得*/
+   
+     var password=document.getElementById("password").value;    /*パスワードを取得*/
+     ncmb.User.login(username, password)    /*二フクラのログインメソッド　ユーザーネームとパスワードを使用*/
+         .then(function(user) {     /*ログインに成功した場合の処理*/
+             /* 処理成功 */
+             alert("ログインに成功しました");
+             location.href = "hontai.html";     /*hontai.htmlに遷移*/
+             
+         })
+         .catch(function(error) {       /*ログインに失敗した場合の処理*/
+             /* 処理失敗 */
+             alert("ログインに失敗しました");
+         });
+}</script>
     <style>
 <script type="text/javascript" src="js/ncmb.min.js" charset="utf-8"></script>
 
