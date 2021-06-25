@@ -9,8 +9,7 @@
    
 </head>
 <body>
-   
-
+  
    <h2>パスワード管理画面</h2>
    <table id="data-table"><tr><th>サイト名</th><th>ID</th><th>パスワード</th><th>表示</th><th>変更</th><th>削除</th></tr></table><br><br>        <!--tableタグパスワード管理本体画面 -->
    <div id="message"></div><br><br>  <!--message表示エリア -->
@@ -22,7 +21,8 @@
   <a class=btn-square-pop onClick="pass();">追加</a>  <!--パスワードの追加画面　pass関数 -->
   <a href="pass-checker.html" class=btn-square-pop>パスワードチェッカー</a>
   <script>
-const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情報を取得
+
+    const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情報を取得
         var w=0;        //変数の宣言(29行目まで)
         var f=0;
         var d=0;
@@ -289,7 +289,7 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
 
         }
     }   
-      </script>
+    </script>
 </body>
    
 
