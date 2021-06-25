@@ -58,9 +58,11 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
         }
         var saito=user.get('saito');
         var ID=user.get('ID');
-
+        pasu=toChar(pasu);
+        pasu2=toChar(pasu2);
+        pasu3=toChar(pasu3);
+        pasu4=toChar(pasu4);
         
-
         if(s!=1&&w!=4){     //二フクラの1番目にデータが保存されている状態かつどこかしらにデータが保存されている状態
         var tableEle = document.getElementById('data-table');   //tableタグの情報を取得 表の作成(94行目まで)
         var tr = document.createElement('tr');
@@ -91,27 +93,18 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
         td.innerHTML="<a class=btn-square-pop onClick=sakuzyo1()>削除</a>";   //削除関数1を動かせるボタンを表示
         tr.appendChild(td);
         tableEle.appendChild(tr);
-        
         }
-
         if(s!=1&&a!=1&&w!=4){       //二フクラの1番目と2番目かどこかしらにデータが保存されている場合
         var tableEle = document.getElementById('data-table');
         var tr = document.createElement('tr');
-    
-    
         var td = document.createElement('td');
         td.innerHTML=saito2;
-    
         tr.appendChild(td);
-     
         var td = document.createElement('td');
         td.innerHTML=ID2;
-    
         tr.appendChild(td);
-
         var td = document.createElement('td');
         td.innerHTML="***";
-    
         tr.appendChild(td);
         var td = document.createElement('td');
         td.innerHTML="<a class=btn-square-pop onClick=hyouzi2()>表示</a>";
@@ -130,21 +123,14 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
     if(s!=1&&a!=1&&w!=4&&d!=1){
         var tableEle = document.getElementById('data-table');
         var tr = document.createElement('tr');
-    
-    
         var td = document.createElement('td');
         td.innerHTML=saito3;
-    
         tr.appendChild(td);
-     
         var td = document.createElement('td');
         td.innerHTML=ID3;
-    
         tr.appendChild(td);
-
         var td = document.createElement('td');
         td.innerHTML="***";
-    
         tr.appendChild(td);
         var td = document.createElement('td');
         td.innerHTML="<a class=btn-square-pop onClick=hyouzi3()>表示</a>";
@@ -163,25 +149,17 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
             message.innerHTML="<b><font color=maroon;>同じパスワードが使いまわされている可能性があります。</font></b>";
         }
         }
-
         if(s!=1&&a!=1&&w!=4&&d!=1&&f!=1){
         var tableEle = document.getElementById('data-table');
         var tr = document.createElement('tr');
-    
-    
         var td = document.createElement('td');
         td.innerHTML=saito4;
-    
         tr.appendChild(td);
-     
         var td = document.createElement('td');
         td.innerHTML=ID4;
-    
         tr.appendChild(td);
-
         var td = document.createElement('td');
         td.innerHTML="***";
-    
         tr.appendChild(td);
         var td = document.createElement('td');
         td.innerHTML="<a class=btn-square-pop onClick=hyouzi4()>表示</a>";
@@ -204,8 +182,6 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
         }
         }
 
-        
-    
  function pass(){
      const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情報を取得
         var w=0;        //変数の宣言(29行目まで)
@@ -220,7 +196,6 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
         }
         var saito4=user.get('saito4');
         var ID4=user.get('ID4');
-
         var pasu3=user.get('pasu3');
         if(pasu3==undefined||pasu3=="undefined"){
         d=1;
@@ -228,7 +203,6 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
         }
         var saito3=user.get('saito3');
         var ID3=user.get('ID3');
-
         var pasu2=user.get('pasu2');
         if(pasu2==undefined||pasu2=="undefined"){
         a=1;
@@ -236,7 +210,6 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
         }
         var saito2=user.get('saito2');
         var ID2=user.get('ID2');
-
         var pasu=user.get('pasu');
         if(pasu==undefined||pasu=="undefined"){
         s=1;
@@ -246,195 +219,63 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
         var ID=user.get('ID');
         if(s==1){       //二フクラの1番目にデータが保存されていない場合
         var saito=document.getElementById("saito").value;
-    
         var ad=document.getElementById("ad").value;
-        
         var pasu=document.getElementById("pasu").value;
-
+        pasu=toAngou(pasu);
         alert("ok"+saito+ad+pasu);
-        var tableEle = document.getElementById('data-table');
-        var tr = document.createElement('tr');
-        
-        
-        var td = document.createElement('td');
-        td.innerHTML=saito;
-        
-        tr.appendChild(td);
-        
-        var td = document.createElement('td');
-        td.innerHTML=ad;
-        
-        tr.appendChild(td);
-
-        var td = document.createElement('td');
-        td.innerHTML="***";
-        
-        tr.appendChild(td);
-    var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=hyouzi1()>表示</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=henkou1()>変更</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=sakuzyo1()>削除</a>";
-        tr.appendChild(td);
-    
-        tableEle.appendChild(tr);
-        
+        setTimeout("ku()",2000);
         var currentUser = ncmb.User.getCurrentUser();
-        
         currentUser.set("saito", saito).update();
         currentUser.set("ID", ad).update();
         currentUser.set("pasu", pasu).update();
-        
-        
         }
         if(s!=1&&a==1){     //二フクラの1番目にデータが保存されていて2番目にデータが保存されていない
             alert("2に保存");
         var currentUser = ncmb.User.getCurrentUser();
         var saito=document.getElementById("saito").value;
-    
         var ad=document.getElementById("ad").value;
-        
         var pasu=document.getElementById("pasu").value;
-
+        pasu=toAngou(pasu);
         currentUser.set("saito2", saito).update();
         currentUser.set("ID2", ad).update();
         currentUser.set("pasu2", pasu).update();
-        alert("ok"+saito+ad+pasu);
-
-
-        var tableEle = document.getElementById('data-table');
-        var tr = document.createElement('tr');
-        
-        
-        var td = document.createElement('td');
-        td.innerHTML=saito;
-        
-        tr.appendChild(td);
-        
-        var td = document.createElement('td');
-        td.innerHTML=ad;
-        
-        tr.appendChild(td);
-
-        var td = document.createElement('td');
-        td.innerHTML="***";
-        
-        tr.appendChild(td);
-    
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=hyouzi2()>表示</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=henkou2()>変更</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=sakuzyo2()>削除</a>";
-        tr.appendChild(td);
-        tableEle.appendChild(tr);
+        alert("ok"+":"+saito+":"+ad+":"+pasu);
+        setTimeout("ku()",2000);
         if(pasu==pasu2){
             message.innerHTML="<b><font color=maroon;>同じパスワードが使いまわされている可能性があります。</font></b>";
         }
-        
         }
         if(s!=1&&a!=1&&d==1){       //二フクラの1,2番目にデータが保存されていて3番目にデータが保存されていない場合
             alert("3に保存");
         var currentUser = ncmb.User.getCurrentUser();
         var saito=document.getElementById("saito").value;
-    
-        var ad=document.getElementById("ad").value;
-        
+        var ad=document.getElementById("ad").value;    
         var pasu=document.getElementById("pasu").value;
-
+        pasu=toAngou(pasu);
         currentUser.set("saito3", saito).update();
         currentUser.set("ID3", ad).update();
         currentUser.set("pasu3", pasu).update();
         alert("ok"+saito+ad+pasu);
-
-
-        var tableEle = document.getElementById('data-table');
-        var tr = document.createElement('tr');
-        
-        
-        var td = document.createElement('td');
-        td.innerHTML=saito;
-        
-        tr.appendChild(td);
-        
-        var td = document.createElement('td');
-        td.innerHTML=ad;
-        
-        tr.appendChild(td);
-
-        var td = document.createElement('td');
-        td.innerHTML="***";
-        
-        tr.appendChild(td);
-    
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=hyouzi3()>表示</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=henkou3()>変更</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=sakuzyo3()>削除</a>";
-        tr.appendChild(td);
-        tableEle.appendChild(tr);
+        setTimeout("ku()",2000);
         if(pasu2==pasu3){
             message.innerHTML="<b><font color=maroon;>同じパスワードが使いまわされている可能性があります。</font></b>";
         }
         if(pasu==pasu3){
             message.innerHTML="<b><font color=maroon;>同じパスワードが使いまわされている可能性があります。</font></b>";
-        }
-        
+        }       
         }
         if(s!=1&&a!=1&&d!=1&&f==1){     //二フクラに1,2,3番目にデータが保存されていて4番目にデータが保存されていない場合
             alert("4に保存");
         var currentUser = ncmb.User.getCurrentUser();
-        var saito=document.getElementById("saito").value;
-    
-        var ad=document.getElementById("ad").value;
-        
+        var saito=document.getElementById("saito").value;   
+        var ad=document.getElementById("ad").value;       
         var pasu=document.getElementById("pasu").value;
-
+        pasu=toAngou(pasu);
         currentUser.set("saito4", saito).update();
         currentUser.set("ID4", ad).update();
         currentUser.set("pasu4", pasu).update();
         alert("ok"+saito+ad+pasu);
-
-
-        var tableEle = document.getElementById('data-table');
-        var tr = document.createElement('tr');
-        
-        
-        var td = document.createElement('td');
-        td.innerHTML=saito;
-        
-        tr.appendChild(td);
-        
-        var td = document.createElement('td');
-        td.innerHTML=ad;
-        
-        tr.appendChild(td);
-
-        var td = document.createElement('td');
-        td.innerHTML="***";
-        
-        tr.appendChild(td);
-    
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=hyouzi4()>表示</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=henkou4()>変更</a>";
-        tr.appendChild(td);
-        var td = document.createElement('td');
-        td.innerHTML="<a class=btn-square-pop onClick=sakuzyo4()>削除</a>";
-        tr.appendChild(td);
-        tableEle.appendChild(tr);
+        setTimeout("ku()",2000);
         if(pasu4==pasu3){
             message.innerHTML="<b><font color=maroon;>同じパスワードが使いまわされている可能性があります。</font></b>";
         }
@@ -447,11 +288,7 @@ const user = ncmb.User.getCurrentUser();    //ログイン中のユーザー情�
 
         }
     }   
-
-    
-    
-
-    </script>
+      </script>
 </body>
    
 </body>
