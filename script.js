@@ -11,7 +11,8 @@ function roguin(){  /*ログイン関数*/
      ncmb.User.login(username, password)    /*二フクラのログインメソッド　ユーザーネームとパスワードを使用*/
          .then(function(user) {     /*ログインに成功した場合の処理*/
              /* 処理成功 */
-             alert("ログインに成功しました");
+             var ID=user.get('ID');
+             alert("ログインに成功しました"+ID);
              location.href = "hontai.html";     /*hontai.htmlに遷移*/
              
          })
@@ -37,7 +38,8 @@ user.set("userName", username)      /*ユーザーネームをセット*/
         ncmb.User.login(user)       /*二フクラのログインメソッド*/
                  .then(function(user) {     /*ログインに成功した場合の処理*/
                      /* 処理成功 */
-                     alert("新規登録に成功しました");
+                     var ID=user.get('ID');
+                     alert("新規登録に成功しました"+ID);
                      location.href = "hontai.html";     /*hontai.htmlに遷移*/
                  })
                  .catch(function(error) {       /*ログインに失敗した場合の処理*/
