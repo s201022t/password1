@@ -1,4 +1,3 @@
-// This is a JavaScript file
 var applicationKey="5ccc23553d7fa3b969523525ec47e154eed39ffd502275ab2bed95a3ae185398";
 var clientKey="31df3f220d2fe12ae4cc76dba2545d28d0e52710a03e0500ca91284c66463a13";
 var ncmb=new NCMB(applicationKey,clientKey);
@@ -54,33 +53,32 @@ user.set("userName", username)      /*ユーザーネームをセット*/
     
    
 }
+
+
 function hyouzi1(){     /*表示関数1*/
         
         // コピー対象をJavaScript上で変数として定義する
         const user = ncmb.User.getCurrentUser();
         var pasu=user.get('pasu');    
-        pasu=toChar(pasu);
         alert(pasu);
+        navigator.clipboard.writeText(pasu);
+        alert(copyTarget);
         
         
         }
 function hyouzi2(){     /*表示関数2*/
         const user = ncmb.User.getCurrentUser();
-        var pasu=user.get('pasu2'); 
-        pasu=toChar(pasu);
-    
+        var pasu=user.get('pasu2');    
         alert(pasu);
         }
 function hyouzi3(){     /*表示関数3*/
         const user = ncmb.User.getCurrentUser();
-        var pasu=user.get('pasu3');   
-        pasu=toChar(pasu); 
+        var pasu=user.get('pasu3');    
         alert(pasu);
         }
 function hyouzi4(){     /*表示関数4*/
         const user = ncmb.User.getCurrentUser();
         var pasu=user.get('pasu4');    
-        pasu=toChar(pasu);
         alert(pasu);
         }
 function henkou1(){     /*変更関数1*/
@@ -422,7 +420,7 @@ function hk1(){         //変更関数1　二フクラ側
      var sa = document.getElementById('sa').value;
      var aid = document.getElementById('aid').value;
      var ps = document.getElementById('ps').value;
-     ps=toAngou(ps);
+     
      
         currentUser.set("saito", sa).update();
         currentUser.set("ID", aid).update();
@@ -435,7 +433,7 @@ function hk2(){         //変更関数2　二フクラ側
      var sa = document.getElementById('sa').value;
      var aid = document.getElementById('aid').value;
      var ps = document.getElementById('ps').value;
-     ps=toAngou(ps);
+     
      
         currentUser.set("saito2", sa).update();
         currentUser.set("ID2", aid).update();
@@ -449,7 +447,7 @@ function hk3(){         //変更関数3　二フクラ側
      var sa = document.getElementById('sa').value;
      var aid = document.getElementById('aid').value;
      var ps = document.getElementById('ps').value;
-     ps=toAngou(ps);
+     
      
         currentUser.set("saito3", sa).update();
         currentUser.set("ID3", aid).update();
@@ -463,7 +461,7 @@ function hk4(){         //変更関数4　二フクラ側
      var sa = document.getElementById('sa').value;
      var aid = document.getElementById('aid').value;
      var ps = document.getElementById('ps').value;
-     ps=toAngou(ps);
+     
      
         currentUser.set("saito4", sa).update();
         currentUser.set("ID4", aid).update();
@@ -476,8 +474,6 @@ function hk4(){         //変更関数4　二フクラ側
 function ku(){          //画面更新関数
     location.href="hontai.html";    //hontai.htmlに遷移
 }
-
-
 function toAngou(str){    // 暗号化
     var key = 1;    // ずらす数
     
@@ -504,4 +500,3 @@ function toChar(str){    // 復号化
     str2 = unescape(str2);    // コード化
     return str2;
 }
-
