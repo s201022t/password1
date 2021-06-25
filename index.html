@@ -1,10 +1,12 @@
 <html>
+
 <head>
-   
-    <link rel="stylesheet" href="css/style.css">
-   <script type="text/javascript" src="js/ncmb.min.js" charset="utf-8"></script>
-    <script src="script.js">
-       function roguin(){  /*ログイン関数*/
+
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/ncmb.min.js" charset="utf-8">
+	</script>
+	<script src="script.js">
+		function roguin(){  /*ログイン関数*/
     
      var username=document.getElementById("username").value;    /*ユーザーネームを取得*/
    
@@ -20,21 +22,21 @@
              /* 処理失敗 */
              alert("ログインに失敗しました");
          });
-}</script>
-    <style>
-
-
-</style>
+}
+	</script>
+	<style>
+	</style>
 </head>
+
 <body>
-    <div class="shutter">
-    <h1 class="logo">パスワードマネージャー</h1>
-  </div>
-  <div class="img"></div>
-    <div class="main">
-    <p class="sign" align="center">サインイン</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="Username" id="username">
+	<div class="shutter">
+		<h1 class="logo">パスワードマネージャー</h1>
+	</div>
+	<div class="img"></div>
+	<div class="main">
+		<p class="sign" align="center">サインイン</p>
+		<form class="form1">
+			<input class="un " type="text" align="center" placeholder="Username" id="username">
       <input class="pass" type="password" align="center" placeholder="Password" id="password">
       <a class="submit" align="center" onClick="roguin();">サインイン</a>
       
